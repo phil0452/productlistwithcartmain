@@ -141,7 +141,6 @@ window.addEventListener('resize', () => {
 },true);
 
 function FillDessertItemContent(obj) {  
-    debugger;
     let content = document.getElementById("desset_menu").innerHTML.trim();
      if(document.getElementById("desset_menu").innerHTML.trim() != "") { return;}
 
@@ -414,7 +413,7 @@ function ShowCartItem(product){
     const cartProduct = document.querySelector('#cart')
     cartProduct.style.display = 'block'
     let item = document.querySelector(`.item_container[data-product-name = "${product.name}"]`)
-    debugger;
+
     if(item){
         item.querySelector('.item_qty').textContent = `${product.quantity}x`
         item.querySelector('.item_total').textContent = (product.price * product.quantity).toFixed(2)
@@ -520,7 +519,7 @@ confirmOrderButton.addEventListener('click', function(e){
 
         carItemsContainer.appendChild(itemContainer);
     })
-debugger;
+
     //let toggleValue = e.target.getAttribute("data-toggle");
     DisplayItemsTotal("confirm_order_total", '#checkout_total');
         modaldialog.classList.remove("hidden");
@@ -570,4 +569,5 @@ function ItemNameandPriceContainer(name, qty, price) {
     container.appendChild(priceandQty);
 
     return container;
+
 }
