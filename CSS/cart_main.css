@@ -1,0 +1,306 @@
+@font-face {
+    font-family: 'redhattext';
+    src:url('../assets/fonts/RedHatText-VariableFont_wght.ttf') /* Legacy iOS */
+}
+
+body {
+    font-family: 'redhattext', sans-serif; /* Fallback to sans-serif if the font fails to load */
+    margin: 0;
+    padding: 0;
+    background-color: hsl(var(--color-rose-50));
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;    
+}
+
+h2 { margin-left: 20px;}
+
+.items_container,
+.cart_container {    
+    max-width: 255px;
+    margin-inline: auto;
+}
+
+@media (min-width: 720px) {
+#main {
+    margin: 60px;
+    margin-inline: 90px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.items_container {
+    margin-inline: unset;
+    max-width: unset;
+    flex: 0 0 66.6666%;
+}
+
+.cart_container { 
+    flex: 0 0 33.3333%; 
+    align-self: flex-start;
+}
+}
+
+#desset_menu {
+    max-width: 255px;
+    margin-block: 30px;
+    margin-inline: auto;
+}
+
+.dessert_item {
+    max-width: 255px;
+    margin-block: 25px;
+    margin-inline: auto;
+    flex: 0 0 33.3333%;
+}
+
+@media (min-width: 720px) {    
+    .dessert_item {
+        margin-block: unset;    
+        margin-inline: 5px;
+    }
+}
+
+@media (min-width: 820px) { 
+#desset_menu {
+    max-width: unset;
+}
+}
+
+.dessert_image {
+    width: 240px;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.selected { border: 3px solid hsl(var(--color-red));}
+.item_info { margin-top: 30px;}
+.item_info p,
+#cart_empty p { margin-block: 5px;}
+
+#cart_empty p {
+    font-size: 14px;
+    text-align:center;
+}
+
+.button {
+    border-radius: 25px;
+    padding: 8px 10px;
+    width: 150px;
+    text-align: center;
+    font-size: 14px;
+    position:relative;
+    z-index: 999;
+    margin-top: -26px;
+    margin-left: 40px;
+    display: none;
+}
+
+.add_to_cart_button { 
+    border: 1px solid hsl(var(--color-rose-300));
+    cursor: pointer;
+}
+
+.active { display: block;}
+.inactive { display: none; }
+
+.add_to_cart_button p { display: inline-block;}
+
+.cart_container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+}
+.empty_cart_image {
+    width: 150px;
+    display: block;
+    margin-inline: auto;
+}
+
+.car_items { margin-block: 25px;}
+
+.qty_container { padding: 12px 10px; }
+
+.qty_button {
+    width: 18px;
+    height: 18px;  
+    border-radius: 45px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.qty_button > img { margin-left: -3px;}
+.qty_subtract_button {  
+    float: left;    
+    font-size: 5px;
+}
+
+.qty_add_button {
+    float: right;
+    font-size: 13px;
+}
+
+.qty_add_button:focus,
+.qty_subtract_button:focus {
+    background-color: white;
+    color: hsl(var(--color-red));
+}
+
+/* checkout cart */
+.item_content > h4,
+.item_content > p { margin-block: 5px;}
+.item_content > p {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+}
+.cart_item  { padding: 10px 10px;}
+
+.item_flex {
+    display: flex;
+    justify-content: space-between;
+}
+.item > * { display: inline-block;}
+
+.remove_container { margin-block: auto;}
+
+.remove_image_container {
+    border: 1px solid hsl(var(--color-rose-300));
+    font-weight: var(--font-weight-700);
+    width: 16px;
+    border-radius: 18px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+}
+.remove_button {
+    border: 1px solid hsl(var(--color-rose-300));
+    font-weight: var(--font-weight-700);
+    width: 17px;
+    border-radius: 18px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    background-color: transparent;
+    margin-block: auto;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.remove_button:hover {
+    transform: scale(1.2); /* Scales the element to 120% of its size */
+}
+.remove_button > img {
+    margin-left: -3px;
+    margin-top: 0px;
+    display: block;
+}
+
+.divider {
+    border: 1px solid hsl(var(--color-rose-50));
+    width: 90%;
+}
+.order_total_span {
+    font-size: 14px; 
+    margin-block:auto;
+}
+
+#checkout_total { font-size: 24px;}
+
+.order_total { padding-block:25px;}
+
+#delivery_message > p {
+    font-size: 14px;
+    text-align: center;
+    margin-inline: auto;
+    width: 235px;
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+#confirm_order { 
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    margin-block: 15px;
+    cursor: pointer;
+ }
+
+ #confirm_order_modal {
+   position: fixed; /* stay in place */
+   z-index: 999;
+   left: 0;
+   top: 0;
+   width: 100%;
+   overflow: auto;
+   background-color: rgb(0,0,0);
+   background-color: rgba(0, 0, 0, 0.4);
+ }
+
+ .confirm_item_image { height: 50px;}
+ 
+ #confirm_order_form {
+    background-color: white;
+    padding: 30px 20px;
+    margin-top: 85px;
+    border-radius: 15px;
+    max-width: 450px;
+    margin-inline: auto;
+ }
+
+ #confirm_order_form > p { margin-block: 0; }
+ .confirm_checkout_content >h4 {
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
+ 
+ .confirm_checkout_content > * { margin-block: 5px;}
+
+ .truncate {
+  width: 130px; /* Set the desired width */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowed content */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+.checkout_Item_thumbnail { height: 45px;}
+
+.checkout_Item_Content > div > div.move_left >h4 {
+        margin-block: 0;
+    margin-bottom: 15px;
+}
+.checkout_Item_Content > div > div.move_left >p { margin-bottom: 0px;}
+.checkout_Item_Content > div > div { display: inline-block;}
+.checkout_Item_Content { padding-block: 5px;}
+    
+.item_price { margin-left: 10px;}
+.move_left { margin-left: 10px;}    
+.align_item_center { align-self: center;}
+
+.cart_items {
+    padding: 15px 15px 0 15px;
+    border-radius: 15px;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.hidden {
+  opacity: 0;
+  height: 0;
+  transition: opacity .5s ease-out;
+}
+.visible {
+  opacity: 1;
+  height: 100%;
+  transition: opacity .5s ease-in;
+}
