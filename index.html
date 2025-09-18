@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="./CSS/cart_variables.css" />
+  <link rel="stylesheet" href="./CSS/cart_main.css" />
+  <title>Frontend Mentor | Product list with cart</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <section id="main" class="flex">
+    <div class="items_container">
+      <h1 class="text_color_rose_900">Desserts</h1>
+
+      <div id="desset_menu" class="flex">
+      </div>
+    </div>
+
+    <div class="cart_container">
+      <h2 class="text_color_red">Your Cart (<span id="item_count"></span>)</h2>
+
+      <div id="cart_empty">
+        <img src="./assets/images/illustration-empty-cart.svg" class="empty_cart_image" alt="empty cart" />
+        <p class="text_color_rose_500 font_weight_600 font_size_productnames">Your added items will appear here.</p>
+      </div>
+      <div id="cart" class="cart">       
+        
+      </div>
+      <div id="cart_total_container" class="order_total inactive">
+        <span class="font_weight_400 order_total_span">Order Total</span>
+        <span id="cart_total" class="font_weight_700"></span>
+      </div>
+      <div id="delivery_message" class="inactive">
+        <p><img src="./assets/images/icon-carbon-neutral.svg" class="carbon_neutral_image" alt="carbon neutral" /> 
+          This is a <strong class="font_weight_600">carbon neutral</strong> delivery
+          </p>
+        
+          <button id="confirm_order" class="qty_container bg_color_red text_color_white font_weight_600">Confirm Order</button>
+      </div>
+      
+    </div>
+    <div id="confirm_order_modal" class="modal hidden">
+      <form id="confirm_order_form">
+        <img src="./assets/images/icon-order-confirmed.svg" alt="icon order confirmed" />
+        <h1>Order Confirmed</h1>
+        <p class="text_color_rose_500 font_size_productnames">We hope you enjoy you food!</p>
+
+        <div  class="cart_items bg_color_rose_50" style="display: block;">        
+          <div id="cartitems">
+           </div>
+          <div id="order_total_container" class="order_total item_flex">
+            <span class="font_weight_400 order_total_span">Order Total</span>
+            <span id="checkout_total" class="font_weight_700"></span>
+          </div>
+        </div>
+
+        <button id="confirm_order" class="qty_container bg_color_red text_color_white font_weight_600">Start New Order</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Philip Davide</a>.
+  </div>
+
+ <script type="text/javascript" src="index_cart.js"></script>
+</body>
+</html>
