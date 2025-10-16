@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'redhattext';
-    src:url('./assets/fonts/RedHatText-VariableFont_wght.ttf') /* Legacy iOS */
+    src:url('/assets/fonts/RedHatText-VariableFont_wght.ttf') /* Legacy iOS */
 }
 
 body {
@@ -309,4 +309,5 @@ h2 { margin-left: 20px;}
   height: 100%;
   transition: opacity .5s ease-in;
 }
+
 
